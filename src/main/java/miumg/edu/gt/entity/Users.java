@@ -19,9 +19,9 @@ public class Users {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="idUser")
+	@Column(name="id_User")
 	private long idUser;
-	@Column(name="userName")
+	@Column(name="user_Name")
 	private String userName;
 	@Column(name="password")
 	private String password;
