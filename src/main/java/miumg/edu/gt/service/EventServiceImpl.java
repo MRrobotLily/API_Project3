@@ -3,12 +3,13 @@ package miumg.edu.gt.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import miumg.edu.gt.entity.Events;
 import miumg.edu.gt.repository.EventsRepository;
 
 
-
+@Service
 public class EventServiceImpl implements EventService {
 	
 	@Autowired

@@ -3,11 +3,12 @@ package miumg.edu.gt.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import miumg.edu.gt.entity.Persons;
 import miumg.edu.gt.repository.PersonsRepository;
 
-
+@Service
 public class PersonServiceImpl implements PersonService{
 	
 	@Autowired
@@ -25,6 +26,7 @@ public class PersonServiceImpl implements PersonService{
 
 	@Override
 	public Persons addPersons(Persons persons) {
+		///////////////
 		return personsRepository.save(persons);
 	}
 

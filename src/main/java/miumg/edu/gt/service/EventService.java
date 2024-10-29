@@ -1,6 +1,5 @@
 package miumg.edu.gt.service;
 
-
 import java.util.List;
 
 import miumg.edu.gt.entity.Events;

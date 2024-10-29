@@ -14,26 +14,28 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="Events")
+@Table(name="Persons")
 
 public class Persons {
 
 		@Id
-		@GeneratedValue(strategy=GenerationType.AUTO)
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name="id_Person")
 		private long idPerson;
-		@Column(name="Name")
-		private String Name; 
+		@Column(name="name")
+		private String name; 
 		@Column(name="Last_Name")
 		private String lastName;
 		@Column (name="Contact_Number")
-		private long contactNumber;
+		private int contactNumber;
 		@Column (name="Email")
 		private String email;
 		@Column (name="Gender")
 		private String gender;
 		@Column (name="Age")
 		private long age;
+		@Column (name="id_User")
+		private long idUser;
 		
 		
 		public long getidPerson() {
@@ -43,10 +45,10 @@ public class Persons {
 			this.idPerson = IdPerson;
 		}
 		public String getName() {
-			return Name;
+			return name;
 		}
 		public void setName(String name) {
-			this.Name = name;
+			this.name = name;
 		}
 		
 		public String lastName() {
@@ -55,10 +57,10 @@ public class Persons {
 		public void setlastName(String LastName) {
 			lastName = LastName;
 		}
-		public long getcontactNumber() {
+		public int getcontactNumber() {
 			return contactNumber;
 		}
-		public void setcontactNumber(long ContactNumber) {
+		public void setcontactNumber(int ContactNumber) {
 			contactNumber = ContactNumber;
 		}
 		public String getemail() {
@@ -78,5 +80,11 @@ public class Persons {
 		}
 		public void setage(long Age) {
 			age = Age;
+		}
+		public long getIdUser() {
+			return idUser;
+		}
+		public void setIdUser(long idUser) {
+			this.idUser = idUser;
 		}
 }
