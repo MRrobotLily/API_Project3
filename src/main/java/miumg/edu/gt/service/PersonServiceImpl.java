@@ -1,6 +1,7 @@
 package miumg.edu.gt.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,10 @@ public class PersonServiceImpl implements PersonService{
 
 	@Override
 	public Persons addPersons(Persons persons) {
-		///////////////
+	    Optional<Persons> existingPerson = personsRepository.findByemail(persons.getemail());
+	    if (existingPerson.isPresent()) {
+	        throw new IllegalArgumentException("El correo electrónico ya está registrado, Ingrese uno nuevo");
+	    }
 		return personsRepository.save(persons);
 	}
 

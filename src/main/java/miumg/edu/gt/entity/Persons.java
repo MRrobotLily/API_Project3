@@ -27,7 +27,7 @@ public class Persons {
 		@Column(name="Last_Name")
 		private String lastName;
 		@Column (name="Contact_Number")
-		private int contactNumber;
+		private String contactNumber;
 		@Column (name="Email")
 		private String email;
 		@Column (name="Gender")
@@ -57,10 +57,10 @@ public class Persons {
 		public void setlastName(String LastName) {
 			lastName = LastName;
 		}
-		public int getcontactNumber() {
+		public String getcontactNumber() {
 			return contactNumber;
 		}
-		public void setcontactNumber(int ContactNumber) {
+		public void setcontactNumber(String ContactNumber) {
 			contactNumber = ContactNumber;
 		}
 		public String getemail() {
