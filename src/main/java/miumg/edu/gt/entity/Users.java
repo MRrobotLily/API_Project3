@@ -33,10 +33,10 @@ public class Users {
 	public void setIdUser(long idUser) {
 		this.idUser = idUser;
 	}
-	public String getUserName() {
+	public String getuserName() {
 		return userName;
 	}
-	public void setUserName(String userName) {
+	public void setuserName(String userName) {
 		this.userName = userName;
 	}
 	public String getPassword() {

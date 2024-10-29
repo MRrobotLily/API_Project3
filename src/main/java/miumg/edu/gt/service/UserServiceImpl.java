@@ -1,11 +1,12 @@
 package miumg.edu.gt.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import miumg.edu.gt.entity.Persons;
 import miumg.edu.gt.entity.Users;
 import miumg.edu.gt.repository.UserRepository;
 
@@ -27,6 +28,10 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Users addUser(Users users) {
+		 Optional<Users> existingUsers = userRepository.findByuserName(users.getuserName());
+		    if (existingUsers.isPresent()) {
+		        throw new IllegalArgumentException("El Nombre de usuario ya está registrado, Ingrese uno nuevo por favor");
+		    }
 		return userRepository.save(users);
 	}
 
@@ -34,7 +39,7 @@ public class UserServiceImpl implements UserService {
 	public Users updateUser(Users users, Long UserId) {
 		Users UserObj = userRepository.findById(UserId).get();
 		if (UserObj != null) {
-			UserObj.setUserName(users.getUserName());
+			UserObj.setuserName(users.getuserName());
 			UserObj.setPassword (users.getPassword());
 		}
 		return userRepository.save(UserObj);
