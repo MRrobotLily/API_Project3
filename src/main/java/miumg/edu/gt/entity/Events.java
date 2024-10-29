@@ -30,8 +30,8 @@ public class Events {
 	private LocalDateTime dateAndTime;
 	@Column (name="Status")
 	private String status;
-	@Column (name="id_Address")
-	private long IdAddress;
+	@Column (name="id_Location")
+	private long idLocation;
 	@Column (name="Id_User")
 	private long idUser;
 	
@@ -61,11 +61,11 @@ public class Events {
 	public void setstatus(String Status) {
 		status = Status;
 	}
-	public long getIdAddress() {
-		return IdAddress;
+	public long getidLocation() {
+		return idLocation;
 	}
-	public void setIdAddress(long idAddress) {
-		IdAddress = idAddress;
+	public void setidLocation(long IdLocation) {
+		idLocation = IdLocation;
 	}
 	public long getidUser() {
 		return idUser;
