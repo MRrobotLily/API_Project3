@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import miumg.edu.gt.entity.Events;
 import miumg.edu.gt.entity.Persons;
 import miumg.edu.gt.service.PersonService;
 
@@ -45,5 +46,12 @@ public class PersonsController {
 	public ResponseEntity<String> deletePersons(@PathVariable("PersonsId") Long PersonsId){
 		return ResponseEntity.ok(personService.deletePersons(PersonsId));
 	}
+	
+	///nuevo
+	
+	  @GetMapping("/Users/{idUser}/Persons")
+	    public ResponseEntity<List<Persons>> getPersonsByidUser(@PathVariable("idUser") Long idUser) {
+	        return ResponseEntity.ok(personService.getPersonsByidUser(idUser));
+	    }
 }
 

@@ -11,4 +11,5 @@ public interface EventService {
 	Events addEvents(Events events);
 	Events updateEvents(Events events, Long EventsId);
 	String deleteEvents(Long EventsId);
+	List<Events> getEventsByidUser(Long idUser);
 }

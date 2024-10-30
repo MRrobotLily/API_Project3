@@ -26,6 +26,8 @@ public class Events {
 	private long idEvent;
 	@Column(name="event_Name")
 	private String eventName;
+	@Column (name="event_created")
+	private LocalDateTime eventCreated;
 	@Column (name="Date_Time")
 	private LocalDateTime dateAndTime;
 	@Column (name="Status")
@@ -73,4 +75,11 @@ public class Events {
 	public void setidUser(long IdUser) {
 		idUser = IdUser;
 	}
+	public LocalDateTime getEventCreated() {
+		return eventCreated;
+	}
+	public void setEventCreated(LocalDateTime eventCreated) {
+		this.eventCreated = eventCreated;
+	}
+	
 }

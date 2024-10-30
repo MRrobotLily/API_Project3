@@ -48,5 +48,8 @@ public class EventServiceImpl implements EventService {
 		}
 		return "Evento eliminado con exito!";
 	}
-
+	@Override
+	  public List<Events> getEventsByidUser(Long idUser) {
+	        return eventsRepository.findByidUser(idUser);
+	    }
 }

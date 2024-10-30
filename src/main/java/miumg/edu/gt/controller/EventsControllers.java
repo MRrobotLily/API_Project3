@@ -45,4 +45,11 @@ public class EventsControllers {
 	public ResponseEntity<String> deleteEvents(@PathVariable("EventsId") Long EventsId){
 		return ResponseEntity.ok(eventsService.deleteEvents(EventsId));
 	}
+	
+	//esto es lo nuevo que se agrego, si no funciona modificarlo,
+	
+	  @GetMapping("/Users/{idUser}/Events")
+	    public ResponseEntity<List<Events>> getEventsByidUser(@PathVariable("idUser") Long idUser) {
+	        return ResponseEntity.ok(eventsService.getEventsByidUser(idUser));
+	    }
 }
