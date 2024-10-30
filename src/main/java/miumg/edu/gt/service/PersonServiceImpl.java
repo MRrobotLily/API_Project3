@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import miumg.edu.gt.entity.Events;
 import miumg.edu.gt.entity.Persons;
 import miumg.edu.gt.repository.PersonsRepository;
 
