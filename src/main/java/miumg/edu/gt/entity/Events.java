@@ -10,6 +10,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 
 
 @Entity
@@ -28,8 +30,10 @@ public class Events {
 	private String eventName;
 	@Column (name="event_created")
 	private LocalDateTime eventCreated;
-	@Column (name="Date_Time")
-	private LocalDateTime dateAndTime;
+	@Column (name="date_Event")
+	private Date dateEvent;
+	@Column (name="time_Event")
+	private LocalTime timeEvent;
 	@Column (name="Status")
 	private String status;
 	@Column (name="id_Location")
@@ -51,12 +55,6 @@ public class Events {
 		this.eventName = eventName;
 	}
 	
-	public LocalDateTime getdateAndTime() {
-		return dateAndTime;
-	}
-	public void setdateAndTime(LocalDateTime DateAndTime) {
-		dateAndTime = DateAndTime;
-	}
 	public String getstatus() {
 		return status;
 	}
@@ -81,5 +79,16 @@ public class Events {
 	public void setEventCreated(LocalDateTime eventCreated) {
 		this.eventCreated = eventCreated;
 	}
-	
+	public Date getDateEvent() {
+		return dateEvent;
+	}
+	public void setDateEvent(Date dateEvent) {
+		this.dateEvent = dateEvent;
+	}
+	public LocalTime getTimeEvent() {
+		return timeEvent;
+	}
+	public void setTimeEvent(LocalTime timeEvent) {
+		this.timeEvent = timeEvent;
+	}
 }

@@ -1,6 +1,7 @@
 package miumg.edu.gt.entity;
 
-import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,24 +25,22 @@ public class Reservation {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_Reservation")
 	private long idReservation;
-	@Column(name="date_Time")
-	private LocalDateTime dateAndTime;
+	@Column (name="date_Event")
+	private Date dateEvent;
+	@Column (name="time_Event")
+	private LocalTime timeEvent;
 	@Column(name="id_Location")
 	private long idLocation;
 	@Column(name="reservaton_Status")
 	private String reservationStatus;
+	@Column(name="id_Event")
+	private long idEvent;
 	
 	public long getIdReservation() {
 		return idReservation;
 	}
 	public void setIdReservation(long idReservation) {
 		this.idReservation = idReservation;
-	}
-	public LocalDateTime getDateAndTime() {
-		return dateAndTime;
-	}
-	public void setDateAndTime(LocalDateTime dateAndTime) {
-		this.dateAndTime = dateAndTime;
 	}
 	public long getIdLocation() {
 		return idLocation;
@@ -54,6 +53,24 @@ public class Reservation {
 	}
 	public void setReservationStatus(String reservationStatus) {
 		this.reservationStatus = reservationStatus;
+	}
+	public long getIdEvent() {
+		return idEvent;
+	}
+	public void setIdEvent(long idEvent) {
+		this.idEvent = idEvent;
+	}
+	public Date getDateEvent() {
+		return dateEvent;
+	}
+	public void setDateEvent(Date dateEvent) {
+		this.dateEvent = dateEvent;
+	}
+	public LocalTime getTimeEvent() {
+		return timeEvent;
+	}
+	public void setTimeEvent(LocalTime timeEvent) {
+		this.timeEvent = timeEvent;
 	}
 	
 }

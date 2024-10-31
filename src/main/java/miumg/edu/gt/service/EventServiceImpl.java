@@ -1,5 +1,7 @@
 package miumg.edu.gt.service;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +37,8 @@ public class EventServiceImpl implements EventService {
 		Events EventsObj = eventsRepository.findById(EventsId).get();
 		if (EventsObj != null) {
 			EventsObj.setstatus(events.getstatus());
-			EventsObj.setdateAndTime(events.getdateAndTime());
+			EventsObj.setDateEvent(events.getDateEvent());
+			EventsObj.setTimeEvent(events.getTimeEvent());
 		}
 		return eventsRepository.save(EventsObj);
 	}
@@ -52,4 +55,18 @@ public class EventServiceImpl implements EventService {
 	  public List<Events> getEventsByidUser(Long idUser) {
 	        return eventsRepository.findByidUser(idUser);
 	    }
-}
+		
+	// Método para verificar si la ubicación y la fecha ya están reservadas
+	@Override
+    public boolean isLocationAndDateEventReserved(Long idLocation, Date dateEvent) {
+        return eventsRepository.existsByidLocationAndDateEvent(idLocation, dateEvent);
+    }
+	@Override
+    public String createOrUpdateEvent(Events event) {
+        if (isLocationAndDateEventReserved(event.getidLocation(), event.getDateEvent())) {
+            return "La ubicación y fecha seleccionadas ya están reservadas. Por favor, selecciona otra fecha u otra ubicación.";
+        } else {
+            eventsRepository.save(event);
+            return "Reserva creada/actualizada con éxito.";
+        }}
+    }

@@ -3,6 +3,7 @@ package miumg.edu.gt.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +36,7 @@ public class EventsControllers {
 	public ResponseEntity<Events> addEvents(@RequestBody Events events){
 		return ResponseEntity.ok(eventsService.addEvents(events));
 	}
+
 	
 	@PatchMapping("/Events")
 	public ResponseEntity<Events> updateEvents(@RequestBody Events events, @PathVariable("EventsId") Long EventsId){
@@ -51,5 +53,16 @@ public class EventsControllers {
 	  @GetMapping("/Users/{idUser}/Events")
 	    public ResponseEntity<List<Events>> getEventsByidUser(@PathVariable("idUser") Long idUser) {
 	        return ResponseEntity.ok(eventsService.getEventsByidUser(idUser));
+	    }
+	  
+	    // Endpoint para crear o actualizar un evento
+
+	  @PostMapping("/Events/{EventsId}")
+	    public ResponseEntity<String> createOrUpdateEvent(@RequestBody Events event) {
+	        String response = eventsService.createOrUpdateEvent(event);
+	        if (response.contains("reservadas")) {
+	            return ResponseEntity.status(HttpStatus.CONFLICT).body(response); // 409 Conflict
+	        }
+	        return ResponseEntity.ok(response); // 200 OK
 	    }
 }
