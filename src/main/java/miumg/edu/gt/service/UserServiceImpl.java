@@ -52,5 +52,10 @@ public class UserServiceImpl implements UserService {
 		}
 		return "Usuario eliminado con exito!";
 	}
+
+	@Override
+	public Users getUserByuserName(String userName) {
+		return userRepository.findByuserName(userName).get();
+	}
 	
 }

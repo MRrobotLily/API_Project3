@@ -27,9 +27,15 @@ public class UserController {
 		return ResponseEntity.ok(userService.getAllUsers());
 	}
 	
-	@GetMapping("/Users/{UserId}")
+	/*@GetMapping("/Users/{UserId}")
 	public ResponseEntity<Users> getUserById(@PathVariable("UserId") Long UserId){
 		return ResponseEntity.ok(userService.getUserById(UserId));
+	}
+	*/
+	
+	@GetMapping("/Users/{userName}")
+	public ResponseEntity<Users> getUserByuserName(@PathVariable("userName") String userName){
+		return ResponseEntity.ok(userService.getUserByuserName(userName));
 	}
 	
 	@PostMapping("/Users")

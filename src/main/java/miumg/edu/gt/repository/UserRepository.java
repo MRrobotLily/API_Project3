@@ -10,4 +10,6 @@ import miumg.edu.gt.entity.Users;
 @Repository
 public interface UserRepository extends CrudRepository<Users, Long> {
 	Optional<Users> findByuserName(String userName);
+
+	Optional<Users> findById(long idUser);
 }

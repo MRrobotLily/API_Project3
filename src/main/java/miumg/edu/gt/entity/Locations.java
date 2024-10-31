@@ -29,6 +29,7 @@ public class Locations {
 	private int capacity;
 	@Column (name="Location_Status")
 	private String locationStatus;
+	
 	public long getIdLocation() {
 		return idLocation;
 	}
