@@ -51,7 +51,7 @@ public class Persons {
 			this.name = name;
 		}
 		
-		public String lastName() {
+		public String getlastName() {
 			return lastName;
 		}
 		public void setlastName(String LastName) {
