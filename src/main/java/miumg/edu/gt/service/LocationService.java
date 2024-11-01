@@ -11,4 +11,5 @@ public interface LocationService {
 	Locations addLocations(Locations locations);
 	Locations updateLocations(Locations locations, Long LocationsId);
 	String deleteLocations(Long LocationsId);
+	Locations getLocationsBylocationName(String locationName);
 }

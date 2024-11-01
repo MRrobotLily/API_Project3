@@ -46,5 +46,10 @@ public class LocationServiceImpl implements LocationService{
 			locationRepository.delete(LocationsObj);
 		}
 		return "Dirección eliminada con exito!";
+	}
+
+	@Override
+	public Locations getLocationsBylocationName(String locationName) {
+		return locationRepository.findBylocationName(locationName).get();
 	}	
 }

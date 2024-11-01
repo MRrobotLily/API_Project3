@@ -42,7 +42,8 @@ public class Events {
 	private long idLocation;
 	@Column (name="Id_User")
 	private long idUser;
-	
+	@Column (name="tipo_Event")
+	private String tipoEvent;
 	
 	public long getIdEvent() {
 		return idEvent;
@@ -93,4 +94,13 @@ public class Events {
 	public void setTimeEvent(LocalTime timeEvent) {
 		this.timeEvent = timeEvent;
 	}
+	
+	public String getTipoEvent() {
+		return tipoEvent;
+	}
+	public void setTipoEvent(String tipoEvent) {
+		this.tipoEvent = tipoEvent;
+	}
+	
+	
 }

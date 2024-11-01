@@ -26,10 +26,10 @@ public class LocationController {
 		return ResponseEntity.ok(locationService.getAllLocations());
 	}
 	
-	@GetMapping("/Locations/{LocationId}")
+	/*@GetMapping("/Locations/{LocationId}")
 	public ResponseEntity<Locations> getLocationById(@PathVariable("LocationsId") Long LocationsId){
 		return ResponseEntity.ok(locationService.getLocationsById(LocationsId));
-	}
+	}*/
 	
 	@PostMapping("/Locations")
 	public ResponseEntity<Locations> addLocation(@RequestBody Locations locations){
@@ -44,6 +44,11 @@ public class LocationController {
 	@DeleteMapping("/Location/{LocationId}")
 	public ResponseEntity<String> deleteLocations(@PathVariable("LocationsId") Long LocationsId){
 		return ResponseEntity.ok(locationService.deleteLocations(LocationsId));
+	}
+	
+	@GetMapping("/Locations/{locationName}")
+	public ResponseEntity<Locations> getLocationBylocationName(@PathVariable("locationName") String locationName){
+		return ResponseEntity.ok(locationService.getLocationsBylocationName(locationName));
 	}
 }
 
