@@ -1,5 +1,6 @@
 package miumg.edu.gt.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -15,5 +16,5 @@ public interface EventService {
 	String deleteEvents(Long EventsId);
 	List<Events> getEventsByidUser(Long idUser);
 	String createOrUpdateEvent(Events event);
-	boolean isLocationAndDateEventReserved(Long idLocation, Date dateEvent);
+	boolean isLocationAndDateEventReserved(Long idLocation, LocalDate dateEvent);
 }

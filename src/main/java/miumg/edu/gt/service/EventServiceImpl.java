@@ -1,5 +1,6 @@
 package miumg.edu.gt.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -58,7 +59,7 @@ public class EventServiceImpl implements EventService {
 		
 	// Método para verificar si la ubicación y la fecha ya están reservadas
 	@Override
-    public boolean isLocationAndDateEventReserved(Long idLocation, Date dateEvent) {
+    public boolean isLocationAndDateEventReserved(Long idLocation, LocalDate dateEvent) {
         return eventsRepository.existsByidLocationAndDateEvent(idLocation, dateEvent);
     }
 	@Override
@@ -69,4 +70,5 @@ public class EventServiceImpl implements EventService {
             eventsRepository.save(event);
             return "Reserva creada/actualizada con éxito.";
         }}
-    }
+	}
+  

@@ -9,6 +9,8 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
@@ -31,7 +33,7 @@ public class Events {
 	@Column (name="event_created")
 	private LocalDateTime eventCreated;
 	@Column (name="date_Event")
-	private Date dateEvent;
+	private LocalDate dateEvent;
 	@Column (name="time_Event")
 	private LocalTime timeEvent;
 	@Column (name="Status")
@@ -79,10 +81,10 @@ public class Events {
 	public void setEventCreated(LocalDateTime eventCreated) {
 		this.eventCreated = eventCreated;
 	}
-	public Date getDateEvent() {
+	public LocalDate getDateEvent() {
 		return dateEvent;
 	}
-	public void setDateEvent(Date dateEvent) {
+	public void setDateEvent(LocalDate dateEvent) {
 		this.dateEvent = dateEvent;
 	}
 	public LocalTime getTimeEvent() {
